@@ -48,3 +48,9 @@ function randomizeMultipleChoice(answer1, answer2, answer3, answer4) {
   $("#answer3").html(newOrder[2]);
   $("#answer4").html(newOrder[3]);
 }
+
+function checkAnswer(){
+  // Access the text for the DOM element that was clicked and compare it to the
+  // correct answer
+  console.log(event.target.innerHTML);
+}

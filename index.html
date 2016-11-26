@@ -2,14 +2,14 @@
 <html>
   <head>
     <style>
-      body {text-align:center}
+      body {text-align:center; font-family:'Arial'}
     </style>
 
     <meta charset="utf-8">
     <title>Quizeo</title>
     <script src="jquery-3.1.0.js"></script>
-    <script src="lib/quiz.js"></script>
-    <script src="lib/data.js"></script>
+    <script src="src/quiz.js"></script>
+    <script src="src/data.js"></script>
   </head>
   <body>
     <table border="1" align="center">
@@ -17,16 +17,16 @@
         <td><div id="question"></div></td>
       </tr>
       <tr>
-        <td><div id="answer1"></div></td>
+        <td><div id="answer1" onclick="checkAnswer();"></div></td>
       </tr>
       <tr>
-        <td><div id="answer2"></div></td>
+        <td><div id="answer2" onclick="checkAnswer();"></div></td>
       </tr>
       <tr>
-        <td><div id="answer3"></div></td>
+        <td><div id="answer3" onclick="checkAnswer();"></div></td>
       </tr>
       <tr>
-        <td><div id="answer4"></div></td>
+        <td><div id="answer4" onclick="checkAnswer();"></div></td>
       </tr>
 
   </body>
