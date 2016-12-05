@@ -12,12 +12,26 @@ function checkAnswer(){
   var choice = event.target.innerHTML;
   if (choice == trueAnswer) {
     score += 1;
+  } else {
+    presentCorrectAnswer();
   }
-  currentQuestionNumber += 1;
-  currentQuestionAnswered = true;
+  updateCurrentQuestion();
   if (currentQuestionNumber <= TOTAL_QUESTIONS) {
     loadQuestion();
   } else {
-    alert('Your total score is: ' + score);
+    presentFinalScore();
   }
+}
+
+function presentFinalScore(){
+  alert('Your total score is: ' + score);
+}
+
+function updateCurrentQuestion(){
+  currentQuestionNumber += 1;
+  currentQuestionAnswered = true;
+}
+
+function presentCorrectAnswer(){
+  alert('Sorry, the correct answer was ' + trueAnswer);
 }
