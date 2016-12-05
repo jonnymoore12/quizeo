@@ -2,33 +2,22 @@
 <html>
   <head>
     <style>
-      body {text-align:center; font-family:'Arial'}
+      .quizButton {
+        position: absolute;
+        z-index: 100;
+        left: 45%;
+        top: 10%;
+      }
     </style>
-
     <meta charset="utf-8">
     <title>Quizeo</title>
-    <script src="jquery-3.1.0.js"></script>
-    <script src="src/quiz.js"></script>
-    <script src="src/question.js"></script>
-    <script src="src/data.js"></script>
   </head>
   <body>
-    <table border="1" align="center">
-      <tr>
-        <td><div id="question"></div></td>
-      </tr>
-      <tr>
-        <td><div id="answer1" onclick="checkAnswer();"></div></td>
-      </tr>
-      <tr>
-        <td><div id="answer2" onclick="checkAnswer();"></div></td>
-      </tr>
-      <tr>
-        <td><div id="answer3" onclick="checkAnswer();"></div></td>
-      </tr>
-      <tr>
-        <td><div id="answer4" onclick="checkAnswer();"></div></td>
-      </tr>
-
+    <div class="quizButton">
+      <form action="quiz.html">
+        <input type="submit" value="5 Question Quiz" />
+      </form>
+    </div>
+    <img src="assets/images/Background.jpg" width=100%/>
   </body>
 </html>
