@@ -5,6 +5,8 @@ $(document).ready(function() {
 var answer1 = ''
 var currentQuestionNumber = 1;
 var currentQuestionAnswered = false;
+var score = 0
+const TOTAL_QUESTIONS = 5;
 
 function loadQuestion() {
   var questionIndex = randomQuestionIndex();
@@ -54,13 +56,15 @@ function randomizeMultipleChoice(answer1, answer2, answer3, answer4) {
 }
 
 function checkAnswer(){
-  // Access the text for the DOM element that was clicked and compare it to the
-  // correct answer
-  // console.log(event.target.innerHTML);
   var choice = event.target.innerHTML;
   if (choice == answer1) {
-    currentQuestionNumber += 1;
-    currentQuestionAnswered = true;
+    score += 1;
+  }
+  currentQuestionNumber += 1;
+  currentQuestionAnswered = true;
+  if (currentQuestionNumber <= TOTAL_QUESTIONS) {
     loadQuestion();
+  } else {
+    alert('Your total score is: ' + score);
   }
 }
