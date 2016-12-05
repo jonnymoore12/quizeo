@@ -1,10 +1,14 @@
 $(document).ready(function() {
-  runQuiz();
+  loadQuestion();
 });
 
-function runQuiz() {
+var answer1 = ''
+var currentQuestionNumber = 1;
+var currentQuestionAnswered = false;
+
+function loadQuestion() {
   var questionIndex = randomQuestionIndex();
-  var answer1 = data[questionIndex][1];
+  answer1 = data[questionIndex][1];
   var falseAnswerIndex1 = falseAnswerIndex(questionIndex, -1, -1);
   var answer2 = data[falseAnswerIndex1][1];
   var falseAnswerIndex2 = falseAnswerIndex(questionIndex, falseAnswerIndex1, -1);
@@ -52,5 +56,11 @@ function randomizeMultipleChoice(answer1, answer2, answer3, answer4) {
 function checkAnswer(){
   // Access the text for the DOM element that was clicked and compare it to the
   // correct answer
-  console.log(event.target.innerHTML);
+  // console.log(event.target.innerHTML);
+  var choice = event.target.innerHTML;
+  if (choice == answer1) {
+    currentQuestionNumber += 1;
+    currentQuestionAnswered = true;
+    loadQuestion();
+  }
 }
