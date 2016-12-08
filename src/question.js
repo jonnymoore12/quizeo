@@ -1,4 +1,5 @@
 function loadQuestion() {
+  $("#questionNumber").html('Question ' + currentQuestionNumber + ' / ' + TOTAL_QUESTIONS);
   var questionIndex = randomQuestionIndex();
   trueAnswer = data[questionIndex][1];
   var falseAnswerIndex1 = falseAnswerIndex(questionIndex, -1, -1);
