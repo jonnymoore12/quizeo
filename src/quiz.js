@@ -13,7 +13,7 @@ function checkAnswer(){
   if (choice == trueAnswer) {
     score += 1;
   } else {
-    presentCorrectAnswer();
+    feedbackForIncorrectAnswer();
   }
   updateCurrentQuestion();
   if (currentQuestionNumber <= TOTAL_QUESTIONS) {
@@ -24,8 +24,8 @@ function checkAnswer(){
   }
 }
 
-function presentCorrectAnswer(){
-  alert("No Leo, this one's a " + trueAnswer);
+function feedbackForIncorrectAnswer(){
+  $("#feedback").html("No Leo, that one was a  " + trueAnswer).fadeOut(3000);
 }
 
 function updateCurrentQuestion(){

@@ -1,5 +1,5 @@
 function loadQuestion() {
-  $("#questionNumber").html('Question ' + currentQuestionNumber + ' / ' + TOTAL_QUESTIONS);
+  outputQuestionNumber();
   var questionIndex = randomQuestionIndex();
   trueAnswer = data[questionIndex][1];
   var falseAnswerIndex1 = falseAnswerIndex(questionIndex, -1, -1);
@@ -9,6 +9,10 @@ function loadQuestion() {
   var falseAnswerIndex3 = falseAnswerIndex(questionIndex, falseAnswerIndex1, falseAnswerIndex2);
   var false3 = data[falseAnswerIndex3][1];
   randomizeMultipleChoice(trueAnswer, false1, false2, false3);
+}
+
+function outputQuestionNumber() {
+  $("#questionNumber").html('Question ' + currentQuestionNumber + ' / ' + TOTAL_QUESTIONS);
 }
 
 function sampleIndex(data) {
