@@ -2,6 +2,12 @@
 <html>
   <head>
     <style>
+      body {
+        text-align:center;
+        font-family:'Gotham';
+        color: black;
+        background-color: rgb(245, 240, 240);
+      }
       ul.topnav {
         list-style-type: none;
         padding: 0;
@@ -30,54 +36,17 @@
       #logo:hover {
           opacity: 0.3;
       }
-
-      .quizButton1 {
-        color: blue;
-        position: absolute;
-        z-index: 100;
-        left: 25%;
-        top: 10%;
-      }
-      .quizButton2 {
-        position: absolute;
-        z-index: 100;
-        left: 45%;
-        top: 10%;
-      }
-      .quizButton3 {
-        position: absolute;
-        z-index: 100;
-        left: 65%;
-        top: 10%;
-      }
     </style>
     <meta charset="utf-8">
     <title>Quizeo</title>
   </head>
-
   <body>
     <ul class="topnav" id="myTopnav">
       <li><a href="http://www.nats.aero" id="logo" href="#home"><img src="assets/images/NATS_logo.jpg" height=20px/></a></li>
+      <li><a href="index.html">Quizeo Home</a></li>
       <li class="icon">
         <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
       </li>
     </ul>
-
-    <div class="quizButton1">
-      <form action="quiz.html">
-        <input type="submit" value="5 Question Quiz" />
-      </form>
-    </div>
-    <div class="quizButton2">
-      <form action="quiz.html">
-        <input type="submit" value="10 Question Quiz" />
-      </form>
-    </div>
-    <div class="quizButton3">
-      <form action="quiz.html">
-        <input type="submit" value="50 Question Quiz" />
-      </form>
-    </div>
-    <img src="assets/images/Background.jpg" width=100%/>
   </body>
 </html>
