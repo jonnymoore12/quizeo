@@ -26,7 +26,7 @@ function checkAnswer(){
 }
 
 function feedbackForIncorrectAnswer(){
-  $("#feedback").html("Nope, that was a " + trueAnswer).show().fadeOut(4000);
+  $("#feedback").html("Nope, that was the " + trueAnswer).show().fadeOut(4000);
 }
 
 function updateCurrentQuestion(){
