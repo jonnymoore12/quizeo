@@ -12,6 +12,7 @@ function checkAnswer(){
   var choice = event.target.innerHTML;
   if (choice == trueAnswer) {
     score += 1;
+    $("#feedback").html("Correct!").show().fadeOut(2000);
   } else {
     feedbackForIncorrectAnswer();
   }
@@ -25,7 +26,7 @@ function checkAnswer(){
 }
 
 function feedbackForIncorrectAnswer(){
-  $("#feedback").html("No Leo, that one was a  " + trueAnswer).fadeOut(3000);
+  $("#feedback").html("Nope, that was a " + trueAnswer).show().fadeOut(4000);
 }
 
 function updateCurrentQuestion(){
