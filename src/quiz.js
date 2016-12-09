@@ -11,10 +11,9 @@ const TOTAL_QUESTIONS = 5;
 function checkAnswer(){
   var choice = event.target.innerHTML;
   if (choice == trueAnswer) {
-    score += 1;
-    $("#feedback").html("Correct!").show().fadeOut(2000);
+    correctAnswer();
   } else {
-    feedbackForIncorrectAnswer();
+    incorrectAnswer();
   }
   updateCurrentQuestion();
   if (currentQuestionNumber <= TOTAL_QUESTIONS) {
@@ -25,8 +24,14 @@ function checkAnswer(){
   }
 }
 
-function feedbackForIncorrectAnswer(){
-  $("#feedback").html("Nope, that was the " + trueAnswer).show().fadeOut(4000);
+function correctAnswer() {
+  score += 1;
+  $("#feedback").html("Correct!").show().fadeOut(2000);
+}
+
+function incorrectAnswer(){
+  $("#feedback").html("Nope, that was the ").show().fadeOut(3500);
+  $("#feedback2").html(trueAnswer).show().fadeOut(3500);
 }
 
 function updateCurrentQuestion(){
