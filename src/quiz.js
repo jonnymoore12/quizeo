@@ -37,9 +37,7 @@ function correctAnswer() {
 }
 
 function incorrectAnswer(element){
-  // highlight selected one red
   element.style.backgroundColor = "rgb(255, 64, 64)";
-  // highlight correct answer green
 }
 
 function presentFinalScore(){
