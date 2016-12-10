@@ -1,4 +1,6 @@
 function loadQuestion() {
+  currentQuestionAnswered = false;
+  resetChoicesColours();
   outputQuestionNumber();
   var questionIndex = randomQuestionIndex();
   trueAnswer = data[questionIndex][1];
@@ -11,8 +13,15 @@ function loadQuestion() {
   randomizeMultipleChoice(trueAnswer, false1, false2, false3);
 }
 
+function resetChoicesColours() {
+  choices = document.getElementsByClassName("choice");
+  for (i = 0; i < choices.length; i++) {
+    choices[i].style.backgroundColor = "#d7d7d7";
+  }
+}
+
 function outputQuestionNumber() {
-  $("#questionNumber").html('Question ' + currentQuestionNumber + ' / ' + TOTAL_QUESTIONS);
+  $("#questionNumber").html('Question ' + currentQuestionNumber + ' / ' + totalQuestions);
 }
 
 function sampleIndex(data) {
