@@ -53,7 +53,7 @@
         border-radius: 5px;
       }
       #answer1:hover,#answer2:hover,#answer3:hover,#answer4:hover {
-        background-color: rgb(0, 178, 255);
+        background-color: rgb(0, 178, 255)!important;
       }
     </style>
 
@@ -64,7 +64,7 @@
     <script src="src/question.js"></script>
     <script src="src/data.js"></script>
   </head>
-  
+
   <body>
     <ul class="topnav" id="myTopnav">
       <li><a href="http://www.nats.aero" id="logo" href="#home"><img src="assets/images/NATS_logo.jpg" height=20px/></a></li>
@@ -74,22 +74,22 @@
       </li>
     </ul>
 
-    <h2><div id="questionNumber" onclick="checkAnswer();"></div></h2>
+    <h2><div id="questionNumber"></div></h2>
     <table id="table" align="center">
       <tr>
         <td><div id="question"></div></td>
       </tr>
       <tr>
-        <td><div id="answer1" onclick="checkAnswer();"></div></td>
+        <td><div id="answer1" class="choice" onclick="checkAnswer();"></div></td>
       </tr>
       <tr>
-        <td><div id="answer2" onclick="checkAnswer();"></div></td>
+        <td><div id="answer2" class="choice" onclick="checkAnswer();"></div></td>
       </tr>
       <tr>
-        <td><div id="answer3" onclick="checkAnswer();"></div></td>
+        <td><div id="answer3" class="choice" onclick="checkAnswer();"></div></td>
       </tr>
       <tr>
-        <td><div id="answer4" onclick="checkAnswer();"></div></td>
+        <td><div id="answer4" class="choice" onclick="checkAnswer();"></div></td>
       </tr>
     </table>
     <div id="feedback"></div><div id="feedback2"></div>

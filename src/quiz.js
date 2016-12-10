@@ -9,29 +9,34 @@ var score = 0
 const TOTAL_QUESTIONS = 5;
 
 function checkAnswer(){
-  var choice = event.target.innerHTML;
+  var choiceElement = event.target
+  var choice = choiceElement.innerHTML;
   if (choice == trueAnswer) {
     correctAnswer();
+    updateCurrentQuestion();
   } else {
-    incorrectAnswer();
+    incorrectAnswer(choiceElement);
   }
-  updateCurrentQuestion();
-  if (currentQuestionNumber <= TOTAL_QUESTIONS) {
-    loadQuestion();
-  } else {
-    // presentFinalScore();
-    finalFeedback();
+  if (currentQuestionAnswered == true) {
+    if (currentQuestionNumber <= TOTAL_QUESTIONS) {
+      loadQuestion();
+    } else {
+      // presentFinalScore();
+      finalFeedback();
+    }
   }
 }
 
 function correctAnswer() {
   score += 1;
+  currentQuestionAnswered = true;
   $("#feedback").html("Correct!").show().fadeOut(2000);
 }
 
-function incorrectAnswer(){
-  $("#feedback").html("Nope, that was the ").show().fadeOut(3500);
-  $("#feedback2").html(trueAnswer).show().fadeOut(3500);
+function incorrectAnswer(element){
+  // highlight selected one red
+  element.style.backgroundColor = "rgb(255, 64, 64)";
+  // highlight correct answer green
 }
 
 function updateCurrentQuestion(){

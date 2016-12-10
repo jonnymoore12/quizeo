@@ -1,4 +1,7 @@
 function loadQuestion() {
+  // Reset all question colours
+  currentQuestionAnswered = false;
+  resetChoicesColours();
   outputQuestionNumber();
   var questionIndex = randomQuestionIndex();
   trueAnswer = data[questionIndex][1];
@@ -9,6 +12,13 @@ function loadQuestion() {
   var falseAnswerIndex3 = falseAnswerIndex(questionIndex, falseAnswerIndex1, falseAnswerIndex2);
   var false3 = data[falseAnswerIndex3][1];
   randomizeMultipleChoice(trueAnswer, false1, false2, false3);
+}
+
+function resetChoicesColours() {
+  choices = document.getElementsByClassName("choice");
+  for (i = 0; i < choices.length; i++) {
+    choices[i].style.backgroundColor = "#d7d7d7";
+  }
 }
 
 function outputQuestionNumber() {
