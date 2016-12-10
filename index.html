@@ -53,6 +53,7 @@
     </style>
     <meta charset="utf-8">
     <title>Quizeo</title>
+    <script src="src/loadQuiz.js"></script>
   </head>
 
   <body>
@@ -63,21 +64,16 @@
       </li>
     </ul>
 
-    <div class="quizButton1">
-      <form action="quiz.html">
-        <input type="submit" value="5 Question Quiz" />
-      </form>
+    <div class="quizButton">
+      <input type="button" onclick="quiz(5)" value="5 Question Quiz" />
     </div>
-    <div class="quizButton2">
-      <form action="quiz.html">
-        <input type="submit" value="10 Question Quiz" />
-      </form>
+    <div class="quizButton">
+      <input type="button" onclick="quiz(10)" value="10 Question Quiz" />
     </div>
-    <div class="quizButton3">
-      <form action="quiz.html">
-        <input type="submit" value="50 Question Quiz" />
-      </form>
+    <div class="quizButton">
+      <input type="button" onclick="quiz(50)" value="50 Question Quiz" />
     </div>
+
     <img src="assets/images/Background.jpg" width=100%/>
   </body>
 </html>

@@ -1,12 +1,13 @@
-$(document).ready(function() {
-  loadQuestion();
-});
-
 var trueAnswer = ''
 var currentQuestionNumber = 1;
 var currentQuestionAnswered = false;
 var score = 0
-const TOTAL_QUESTIONS = 5;
+var totalQuestions = 5;
+
+$(document).ready(function() {
+  getTotalQuestions();
+  loadQuestion();
+});
 
 function checkAnswer(){
   var choiceElement = event.target
@@ -17,7 +18,7 @@ function checkAnswer(){
     incorrectAnswer(choiceElement);
   }
   if (currentQuestionAnswered == true) {
-    if (currentQuestionNumber <= TOTAL_QUESTIONS) {
+    if (currentQuestionNumber <= totalQuestions) {
       setTimeout(function(){
         loadQuestion()
       }, 1000);
@@ -46,7 +47,7 @@ function presentFinalScore(){
 }
 
 // function finalFeedback(){
-//   if (score == TOTAL_QUESTIONS) {
+//   if (score == totalQuestions) {
 //     alert("Not bad, dad would be proud");
 //   } else {
 //     alert("How can? What would mum say?!");

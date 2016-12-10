@@ -1,5 +1,4 @@
 function loadQuestion() {
-  // Reset all question colours
   currentQuestionAnswered = false;
   resetChoicesColours();
   outputQuestionNumber();
@@ -22,7 +21,7 @@ function resetChoicesColours() {
 }
 
 function outputQuestionNumber() {
-  $("#questionNumber").html('Question ' + currentQuestionNumber + ' / ' + TOTAL_QUESTIONS);
+  $("#questionNumber").html('Question ' + currentQuestionNumber + ' / ' + totalQuestions);
 }
 
 function sampleIndex(data) {
