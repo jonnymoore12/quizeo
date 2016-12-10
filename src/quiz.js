@@ -13,13 +13,14 @@ function checkAnswer(){
   var choice = choiceElement.innerHTML;
   if (choice == trueAnswer) {
     correctAnswer();
-    updateCurrentQuestion();
   } else {
     incorrectAnswer(choiceElement);
   }
   if (currentQuestionAnswered == true) {
     if (currentQuestionNumber <= TOTAL_QUESTIONS) {
-      loadQuestion();
+      setTimeout(function(){
+        loadQuestion()
+      }, 1000);
     } else {
       // presentFinalScore();
       finalFeedback();
@@ -30,18 +31,14 @@ function checkAnswer(){
 function correctAnswer() {
   score += 1;
   currentQuestionAnswered = true;
-  $("#feedback").html("Correct!").show().fadeOut(2000);
+  currentQuestionNumber += 1
+  $("#feedback").html("Correct!").show().fadeOut(1000);
 }
 
 function incorrectAnswer(element){
   // highlight selected one red
   element.style.backgroundColor = "rgb(255, 64, 64)";
   // highlight correct answer green
-}
-
-function updateCurrentQuestion(){
-  currentQuestionNumber += 1;
-  currentQuestionAnswered = true;
 }
 
 function presentFinalScore(){
