@@ -40,10 +40,6 @@
       #questionNumber {
         color: rgb(0, 178, 255);
       }
-      #feedback {
-        color: rgb(0, 178, 255);
-        font-weight: bold;
-      }
       #table {
         border-collapse: separate;
         border-spacing: 5px;
@@ -54,6 +50,15 @@
       }
       #answer1:hover,#answer2:hover,#answer3:hover,#answer4:hover {
         background-color: rgb(0, 178, 255)!important;
+      }
+      #feedback {
+        color: rgb(0, 178, 255);
+        font-weight: bold;
+      }
+      #finalFeedback {
+        visibility: hidden;
+        position: absolute;
+        z-index: 100;
       }
     </style>
 
@@ -94,5 +99,13 @@
       </tr>
     </table>
     <div id="feedback" style="font-size:16pt"></div>
+    <div id="finalFeedback">
+      Total Questions: <div id="totalQuestions"></div>
+      <br />
+      Correct: <div id="correct"></div>
+      <br />
+      Percentage: <div id="percentage"></div>
+      <br />
+    </div>
   </body>
 </html>
