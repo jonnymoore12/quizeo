@@ -26,7 +26,9 @@ function checkAnswer() {
       }, 1000);
     } else {
       calculatePercentage();
-      finalFeedback();
+      setTimeout(function(){
+        finalFeedback()
+      }, 1000);
     }
   }
 }
@@ -42,7 +44,6 @@ function correctAnswer() {
 
 function incorrectAnswer(element) {
   firstTimeAnsweringQuestion = false;
-  // element.switchClass("choice", "incorrect");
   $(element).toggleClass("choice incorrect");
   element.style.backgroundColor = "rgb(255, 64, 64)";
 }
@@ -53,7 +54,7 @@ function calculatePercentage() {
 
 function finalComment( ) {
   var comment = ''
-  if (percentage == 100) {
+  if (percentage >= 96) {
     comment = "Coming along nicely. Dad would be proud."
   } else if (percentage > 80) {
     comment = "Must try harder. Back to the academy you go."

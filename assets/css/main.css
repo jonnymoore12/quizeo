@@ -1,0 +1,28 @@
+ul.topnav {
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+}
+ul.topnav li {
+  float: left;
+}
+ul.topnav li a {
+  display: inline-block;
+  color: black;
+  text-align: center;
+  padding: 14px;
+  padding-bottom: 10px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 17px;
+}
+ul.topnav li a:hover {
+  color: rgb(170, 169, 169);
+}
+ul.topnav li.icon {
+  display: none;
+}
+#logo:hover {
+  opacity: 0.3;
+}
