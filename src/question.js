@@ -14,12 +14,21 @@ function loadQuestion() {
 function resetForNewQuestion() {
   firstTimeAnsweringQuestion = true
   currentQuestionAnswered = false;
-  resetChoicesColours();
+  resetChoiceClassNames();
+  resetChoiceColours();
   outputQuestionNumber();
 }
 
-function resetChoicesColours() {
-  choices = document.getElementsByClassName("choice");
+function resetChoiceClassNames() {
+  var incorrectChoices = document.getElementsByClassName("incorrect");
+  for (i = 0; i < incorrectChoices.length; i++) {
+    console.log(incorrectChoices[i]);
+    $(incorrectChoices[i]).toggleClass("incorrect choice");
+  }
+}
+
+function resetChoiceColours() {
+  var choices = document.getElementsByClassName("choice");
   for (i = 0; i < choices.length; i++) {
     choices[i].style.backgroundColor = "#d7d7d7";
   }

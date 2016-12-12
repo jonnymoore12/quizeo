@@ -25,7 +25,6 @@ function checkAnswer() {
         loadQuestion()
       }, 1000);
     } else {
-      // presentFinalScore();
       calculatePercentage();
       finalFeedback();
     }
@@ -43,11 +42,9 @@ function correctAnswer() {
 
 function incorrectAnswer(element) {
   firstTimeAnsweringQuestion = false;
+  // element.switchClass("choice", "incorrect");
+  $(element).toggleClass("choice incorrect");
   element.style.backgroundColor = "rgb(255, 64, 64)";
-}
-
-function presentFinalScore() {
-  alert('Your total score is: ' + score);
 }
 
 function calculatePercentage() {
