@@ -34,7 +34,7 @@
         display: none;
       }
       #logo:hover {
-          opacity: 0.3;
+        opacity: 0.3;
       }
 
       #questionNumber {
@@ -57,9 +57,28 @@
       }
       #finalFeedback {
         visibility: hidden;
+        width: 50%;
+        height: 50%;
         position: absolute;
-        z-index: 100;
       }
+      #feedbackImage {
+        position: absolute;
+        left: 0;
+        right: 0;
+      }
+      #feedbackText {
+        z-index: 100;
+        position: absolute;
+        color: white;
+        font-size: 24px;
+        font-weight: bold;
+        left: 30%;
+        top: 35%;
+      }
+      #totalQuestions,#correct,#percentage {
+        color: rgb(0, 178, 255);
+      }
+
     </style>
 
     <meta charset="utf-8">
@@ -80,6 +99,18 @@
       </li>
     </ul>
 
+    <div id="finalFeedback">
+      <img id="feedbackImage" src="assets/images/Control_Tower_copy.jpg"/>
+      <div id="feedbackText">
+        Total Questions: <div id="totalQuestions"></div>
+        <br />
+        Correct: <div id="correct"></div>
+        <br />
+        Percentage: <div id="percentage"></div>
+        <br />
+      </div>
+    </div>
+
     <h2><div id="questionNumber"></div></h2>
     <table id="table" align="center">
       <tr>
@@ -99,13 +130,5 @@
       </tr>
     </table>
     <div id="feedback" style="font-size:16pt"></div>
-    <div id="finalFeedback">
-      Total Questions: <div id="totalQuestions"></div>
-      <br />
-      Correct: <div id="correct"></div>
-      <br />
-      Percentage: <div id="percentage"></div>
-      <br />
-    </div>
   </body>
 </html>
