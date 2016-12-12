@@ -54,7 +54,7 @@ function calculatePercentage() {
 
 function finalComment( ) {
   var comment = ''
-  if (percentage == 100) {
+  if (percentage >= 96) {
     comment = "Coming along nicely. Dad would be proud."
   } else if (percentage > 80) {
     comment = "Must try harder. Back to the academy you go."
