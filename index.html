@@ -1,89 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <style>
-      html {
-        background: url("assets/images/Background.jpg") no-repeat center center fixed;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-      }
-      ul.topnav {
-        list-style-type: none;
-        padding: 0;
-        overflow: hidden;
-        background-color: white;
-      }
-      ul.topnav li {
-        float: left;
-      }
-      ul.topnav li a {
-        display: inline-block;
-        color: black;
-        text-align: center;
-        padding: 14px;
-        padding-bottom: 10px;
-        text-decoration: none;
-        transition: 0.3s;
-        font-size: 17px;
-      }
-      ul.topnav li a:hover {
-        color: rgb(170, 169, 169);
-      }
-      ul.topnav li.icon {
-        display: none;
-      }
-      #logo:hover {
-          opacity: 0.3;
-      }
-      table {
-        margin-left: 65%;
-        border-spacing: 5px;
-        width: 30%;
-      }
-      .button {
-        font-family: 'Gotham';
-        color: black;
-        font-weight: normal;
-        font-size: 18px;
-        text-align: center;
-        width: 100%;
-        background-color: #d7d7d7!important;
-        border-radius: 5px;
-      }
-      #title {
-        background-color: white!important;
-        font-weight: bold;
-        font-size: 22px;
-      }
-      .button:hover {
-        background-color: rgb(0, 178, 255)!important;
-      }
-      #quizButton1 {
-        position: absolute;
-        z-index: 100;
-        left: 25%;
-        top: 10%;
-      }
-      #quizButton2 {
-        position: absolute;
-        z-index: 100;
-        left: 45%;
-        top: 10%;
-      }
-      #quizButton3 {
-        position: absolute;
-        z-index: 100;
-        left: 65%;
-        top: 10%;
-      }
-    </style>
     <meta charset="utf-8">
     <title>Quizeo</title>
     <script src="src/loadQuiz.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/index.css">
   </head>
-
   <body>
     <ul class="topnav" id="myTopnav">
       <li><a href="http://www.nats.aero" id="logo" href="#home"><img src="assets/images/NATS_logo.jpg" height=20px/></a></li>
@@ -91,7 +13,6 @@
         <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
       </li>
     </ul>
-
     <div>
       <br /><br />
       <table>

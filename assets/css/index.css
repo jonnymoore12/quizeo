@@ -1,0 +1,48 @@
+html {
+  background: url("./../images/Background.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+table {
+  margin-left: 65%;
+  border-spacing: 5px;
+  width: 30%;
+}
+.button {
+  font-family: 'Gotham';
+  color: black;
+  font-weight: normal;
+  font-size: 18px;
+  text-align: center;
+  width: 100%;
+  background-color: #d7d7d7!important;
+  border-radius: 5px;
+}
+#title {
+  background-color: white!important;
+  font-weight: bold;
+  font-size: 22px;
+}
+.button:hover {
+  background-color: rgb(0, 178, 255)!important;
+}
+#quizButton1 {
+  position: absolute;
+  z-index: 100;
+  left: 25%;
+  top: 10%;
+}
+#quizButton2 {
+  position: absolute;
+  z-index: 100;
+  left: 45%;
+  top: 10%;
+}
+#quizButton3 {
+  position: absolute;
+  z-index: 100;
+  left: 65%;
+  top: 10%;
+}

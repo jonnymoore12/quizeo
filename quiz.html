@@ -1,106 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <style>
-      body {
-        text-align:center;
-        font-family:'Gotham';
-        color: black;
-        background-color: rgb(245, 240, 240);
-      }
-      ul.topnav {
-        list-style-type: none;
-        padding: 0;
-        overflow: hidden;
-        background-color: white;
-      }
-      ul.topnav li {
-        float: left;
-      }
-      ul.topnav li a {
-        display: inline-block;
-        color: black;
-        text-align: center;
-        padding: 14px;
-        padding-bottom: 10px;
-        text-decoration: none;
-        transition: 0.3s;
-        font-size: 17px;
-      }
-      ul.topnav li a:hover {
-        color: rgb(170, 169, 169);
-      }
-      ul.topnav li.icon {
-        display: none;
-      }
-      #logo:hover {
-        opacity: 0.3;
-      }
-
-      #questionNumber {
-        color: rgb(0, 178, 255);
-      }
-      #table {
-        border-collapse: separate;
-        border-spacing: 5px;
-      }
-      .choice {
-        background-color: #d7d7d7;
-        border-radius: 5px;
-      }
-      .choice:hover, .requiz:hover {
-        background-color: rgb(0, 178, 255)!important;
-      }
-      .incorrect {
-        border-radius: 5px;
-      }
-      #feedback {
-        color: rgb(0, 178, 255);
-        font-weight: bold;
-      }
-      #finalFeedback {
-        visibility: hidden;
-        width: 50%;
-        height: 50%;
-        position: absolute;
-      }
-      #feedbackImage {
-        position: absolute;
-        left: 0;
-        right: 0;
-      }
-      table {
-        margin: 0 auto;
-      }
-      #feedbackText {
-        text-align: center;
-        left: 50%;
-        width: 50%;
-        z-index: 100;
-        position: absolute;
-        color: white;
-        font-size: 24px;
-        font-weight: bold;
-        top: 35%;
-      }
-      #totalQuestions,#correct,#percentage {
-        color: rgb(0, 178, 255);
-      }
-      #comment {
-        font-weight: normal;
-      }
-      .requiz {
-        color: black;
-        font-weight: normal;
-        font-size: 18px;
-        text-align: center;
-        width: 100%;
-        background-color: #d7d7d7!important;
-        border-radius: 5px;
-      }
-
-    </style>
-
     <meta charset="utf-8">
     <title>Quizeo</title>
     <script src="jquery-3.1.0.js"></script>
@@ -108,58 +8,37 @@
     <script src="src/quiz.js"></script>
     <script src="src/question.js"></script>
     <script src="src/data.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/quiz.css">
   </head>
-
   <body>
+
     <ul class="topnav" id="myTopnav">
       <li><a href="http://www.nats.aero" id="logo" href="#home"><img src="assets/images/NATS_logo.jpg" height=20px/></a></li>
       <li><a href="index.html">Quizeo Home</a></li>
-      <li class="icon">
-        <a href="javascript:void(0);" onclick="myFunction()">&#9776;</a>
-      </li>
     </ul>
 
-    <div id="finalFeedback">
+    <div id="finalFeedback" width=100% height=100%>
       <img id="feedbackImage" src="assets/images/Control_Tower_copy.jpg"/>
       <div id="feedbackText">
         <i><div id="comment"></div></i><br /><br />
         <table>
-          <tr>
-            <td>Total Questions: <div id="totalQuestions"><br /></div><br /></td>
-          </tr>
-          <tr>
-            <td>Score: <div id="correct"></div><br /></td>
-          </tr>
-          <tr>
-            <td>Percentage: <div id="percentage"></div><br /></td>
-          </tr>
-          <tr>
-            <td><div class="requiz" onclick="home();">Home</div></td>
-          </tr>
-          <tr>
-            <td><div class="requiz" onclick="requiz();">Requiz</div></td>
-          </tr>
+          <tr><td>Total Questions: <div id="totalQuestions"><br /></div><br /></td></tr>
+          <tr><td>Score: <div id="correct"></div><br /></td></tr>
+          <tr><td>Percentage: <div id="percentage"></div><br /></td></tr>
+          <tr><td><div class="requiz" onclick="home();">Home</div></td></tr>
+          <tr><td><div class="requiz" onclick="requiz();">Requiz</div></td></tr>
         </table>
       </div>
     </div>
 
     <h2><div id="questionNumber"></div></h2>
     <table id="table" align="center">
-      <tr>
-        <td><div id="question"></div></td>
-      </tr>
-      <tr>
-        <td><div id="answer1" class="choice" onclick="checkAnswer();"></div></td>
-      </tr>
-      <tr>
-        <td><div id="answer2" class="choice" onclick="checkAnswer();"></div></td>
-      </tr>
-      <tr>
-        <td><div id="answer3" class="choice" onclick="checkAnswer();"></div></td>
-      </tr>
-      <tr>
-        <td><div id="answer4" class="choice" onclick="checkAnswer();"></div></td>
-      </tr>
+      <tr><td><div id="question"></div></td></tr>
+      <tr><td><div id="answer1" class="choice" onclick="checkAnswer();"></div></td></tr>
+      <tr><td><div id="answer2" class="choice" onclick="checkAnswer();"></div></td></tr>
+      <tr><td><div id="answer3" class="choice" onclick="checkAnswer();"></div></td></tr>
+      <tr><td><div id="answer4" class="choice" onclick="checkAnswer();"></div></td></tr>
     </table>
     <div id="feedback" style="font-size:16pt"></div>
   </body>
