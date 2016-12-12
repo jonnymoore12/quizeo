@@ -2,6 +2,13 @@
 <html>
   <head>
     <style>
+      html {
+        background: url("assets/images/Background.jpg") no-repeat center center fixed;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
       ul.topnav {
         list-style-type: none;
         padding: 0;
@@ -30,13 +37,28 @@
       #logo:hover {
           opacity: 0.3;
       }
-
-      .quizButton {
-        position: absolute;
-        background-color: rgb(214, 214, 214);
-        border-radius: 5px;
+      table {
+        margin-left: 65%;
+        border-spacing: 5px;
+        width: 30%;
+      }
+      .button {
         font-family: 'Gotham';
-        font-size: 10pt;
+        color: black;
+        font-weight: normal;
+        font-size: 18px;
+        text-align: center;
+        width: 100%;
+        background-color: #d7d7d7!important;
+        border-radius: 5px;
+      }
+      #title {
+        background-color: white!important;
+        font-weight: bold;
+        font-size: 22px;
+      }
+      .button:hover {
+        background-color: rgb(0, 178, 255)!important;
       }
       #quizButton1 {
         position: absolute;
@@ -71,15 +93,12 @@
     </ul>
 
     <div>
-      <input type="button" class="quizButton" id="quizButton1" onclick="quiz(1)" value="5 Questions" />
-    </div>
-    <div>
-      <input type="button" class="quizButton" id="quizButton2" onclick="quiz(10)" value="10 Questions" />
-    </div>
-    <div>
-      <input type="button" class="quizButton" id="quizButton3" onclick="quiz(50)" value="50 Questions" />
-    </div>
-
-    <img src="assets/images/Background.jpg" width=100%/>
+      <br /><br />
+      <table>
+        <tr><td><div class="button" id="title">Quizes</div></td></tr>
+        <tr><td><div class="button" onclick="quiz(1)">1 Question</div></td></tr>
+        <tr><td><div class="button" onclick="quiz(10)">10 Questions</div></td></tr>
+        <tr><td><div class="button" onclick="quiz(50)">50 Questions</div></td></tr>
+      </table>
   </body>
 </html>

@@ -26,7 +26,9 @@ function checkAnswer() {
       }, 1000);
     } else {
       calculatePercentage();
-      finalFeedback();
+      setTimeout(function(){
+        finalFeedback()
+      }, 1000);
     }
   }
 }
@@ -42,7 +44,6 @@ function correctAnswer() {
 
 function incorrectAnswer(element) {
   firstTimeAnsweringQuestion = false;
-  // element.switchClass("choice", "incorrect");
   $(element).toggleClass("choice incorrect");
   element.style.backgroundColor = "rgb(255, 64, 64)";
 }
