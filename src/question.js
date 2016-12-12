@@ -1,14 +1,7 @@
 function loadQuestion() {
   resetForNewQuestion();
-  questionIndex = getNonRepeatingQuestion();
-  trueAnswer = data[questionIndex][1];
-  var falseAnswerIndex1 = falseAnswerIndex(questionIndex, -1, -1);
-  var false1 = data[falseAnswerIndex1][1];
-  var falseAnswerIndex2 = falseAnswerIndex(questionIndex, falseAnswerIndex1, -1);
-  var false2 = data[falseAnswerIndex2][1];
-  var falseAnswerIndex3 = falseAnswerIndex(questionIndex, falseAnswerIndex1, falseAnswerIndex2);
-  var false3 = data[falseAnswerIndex3][1];
-  randomizeMultipleChoice(trueAnswer, false1, false2, false3);
+  randomizeQuestionPicture();
+  generateMultipleChoices();
 }
 
 function resetForNewQuestion() {
@@ -32,7 +25,15 @@ function outputQuestionNumber() {
   $("#questionNumber").html('Question ' + currentQuestionNumber + ' / ' + totalQuestions);
 }
 
-function getNonRepeatingQuestion() {
+function randomizeQuestionPicture() {
+  questionIndex = nonRepeatingQuestionIndex();
+  var arrayOfPlanesAtQuestionIndex = data[questionIndex][0];
+  // pictureIndex is used to search within an array containing multiple images for the same plane
+  pictureIndex = getPictureIndex(arrayOfPlanesAtQuestionIndex);
+  setQuestion();
+}
+
+function nonRepeatingQuestionIndex() {
   var newQuestionIndex = randomQuestionIndex();
   while (newQuestionIndex == questionIndex) {
     newQuestionIndex = randomQuestionIndex();
@@ -40,15 +41,33 @@ function getNonRepeatingQuestion() {
   return newQuestionIndex;
 }
 
-function sampleIndex(data) {
-  return Math.floor(Math.random()*data.length);
+function getPictureIndex(arrayOfPlanes) {
+  return sampleIndex(arrayOfPlanes);
+}
+
+function sampleIndex(array) {
+  return Math.floor(Math.random()*array.length);
 }
 
 function randomQuestionIndex() {
   var questionIndex = sampleIndex(data);
-  var question = '<img src="assets/images/' + data[questionIndex][0].toString() + '"/>'
-  $("#question").html(question);
   return questionIndex;
+}
+
+function setQuestion() {
+  var question = '<img src="assets/images/' + data[questionIndex][0][pictureIndex].toString() + '"/>'
+  $("#question").html(question);
+}
+
+function generateMultipleChoices() {
+  trueAnswer = data[questionIndex][1];
+  var falseAnswerIndex1 = falseAnswerIndex(questionIndex, -1, -1);
+  var false1 = data[falseAnswerIndex1][1];
+  var falseAnswerIndex2 = falseAnswerIndex(questionIndex, falseAnswerIndex1, -1);
+  var false2 = data[falseAnswerIndex2][1];
+  var falseAnswerIndex3 = falseAnswerIndex(questionIndex, falseAnswerIndex1, falseAnswerIndex2);
+  var false3 = data[falseAnswerIndex3][1];
+  randomizeMultipleChoice(trueAnswer, false1, false2, false3);
 }
 
 function falseAnswerIndex(questionIndex, falseAnswerIndex1, falseAnswerIndex2) {
