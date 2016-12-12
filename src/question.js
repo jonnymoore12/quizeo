@@ -1,7 +1,5 @@
 function loadQuestion() {
-  currentQuestionAnswered = false;
-  resetChoicesColours();
-  outputQuestionNumber();
+  resetForNewQuestion();
   var questionIndex = randomQuestionIndex();
   trueAnswer = data[questionIndex][1];
   var falseAnswerIndex1 = falseAnswerIndex(questionIndex, -1, -1);
@@ -11,6 +9,13 @@ function loadQuestion() {
   var falseAnswerIndex3 = falseAnswerIndex(questionIndex, falseAnswerIndex1, falseAnswerIndex2);
   var false3 = data[falseAnswerIndex3][1];
   randomizeMultipleChoice(trueAnswer, false1, false2, false3);
+}
+
+function resetForNewQuestion() {
+  firstTimeAnsweringQuestion = true
+  currentQuestionAnswered = false;
+  resetChoicesColours();
+  outputQuestionNumber();
 }
 
 function resetChoicesColours() {
