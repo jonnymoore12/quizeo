@@ -3,6 +3,7 @@ var currentQuestionNumber = 1;
 var currentQuestionAnswered = false;
 var score = 0
 var totalQuestions = 5;
+var percentage = 0
 
 $(document).ready(function() {
   getTotalQuestions();
@@ -24,6 +25,7 @@ function checkAnswer(){
       }, 1000);
     } else {
       // presentFinalScore();
+      calculatePercentage();
       finalFeedback();
     }
   }
@@ -37,23 +39,33 @@ function correctAnswer() {
 }
 
 function incorrectAnswer(element){
-  // highlight selected one red
   element.style.backgroundColor = "rgb(255, 64, 64)";
-  // highlight correct answer green
 }
 
 function presentFinalScore(){
   alert('Your total score is: ' + score);
 }
 
-// function finalFeedback(){
-//   if (score == totalQuestions) {
-//     alert("Not bad, dad would be proud");
-//   } else {
-//     alert("How can? What would mum say?!");
-//   }
-// }
+function calculatePercentage(){
+  percentage = Math.floor((score / totalQuestions) * 100)
+}
+
+function finalComment(){
+  var comment = ''
+  if (percentage == 100) {
+    comment = "Coming along nicely. Dad would be proud."
+  } else if (percentage > 80) {
+    comment = "Must try harder. Back to the academy you go."
+  } else {
+    comment = "How can?! What would mum say?"
+  }
+  return "\"" + comment + "\""
+}
 
 function finalFeedback(){
-  window.location="results.html";
+  document.getElementById("finalFeedback").style.visibility="visible";
+  document.getElementById("totalQuestions").innerHTML=totalQuestions;
+  document.getElementById("correct").innerHTML=score;
+  document.getElementById("percentage").innerHTML=percentage.toString() + "%";
+  document.getElementById("comment").innerHTML=finalComment();
 }
