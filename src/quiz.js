@@ -45,7 +45,7 @@ function correctAnswer() {
 function incorrectAnswer(element) {
   firstTimeAnsweringQuestion = false;
   $(element).toggleClass("choice incorrect");
-  element.style.backgroundColor = "rgb(255, 64, 64)";
+  // element.style.backgroundColor = "rgb(255, 64, 64)";
 }
 
 function calculatePercentage() {

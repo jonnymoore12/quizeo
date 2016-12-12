@@ -15,22 +15,16 @@ function resetForNewQuestion() {
   firstTimeAnsweringQuestion = true
   currentQuestionAnswered = false;
   resetChoiceClassNames();
-  resetChoiceColours();
+  resetChoiceClassNames();
   outputQuestionNumber();
 }
 
 function resetChoiceClassNames() {
   var incorrectChoices = document.getElementsByClassName("incorrect");
   for (i = 0; i < incorrectChoices.length; i++) {
+    console.log(i)
     console.log(incorrectChoices[i]);
-    $(incorrectChoices[i]).toggleClass("incorrect choice");
-  }
-}
-
-function resetChoiceColours() {
-  var choices = document.getElementsByClassName("choice");
-  for (i = 0; i < choices.length; i++) {
-    choices[i].style.backgroundColor = "#d7d7d7";
+    incorrectChoices[i].className = "choice";
   }
 }
 
