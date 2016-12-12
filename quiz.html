@@ -48,7 +48,7 @@
         background-color: #d7d7d7;
         border-radius: 5px;
       }
-      #answer1:hover,#answer2:hover,#answer3:hover,#answer4:hover {
+      #answer1:hover,#answer2:hover,#answer3:hover,#answer4:hover,.requiz:hover {
         background-color: rgb(0, 178, 255)!important;
       }
       #feedback {
@@ -67,12 +67,14 @@
         right: 0;
       }
       #feedbackText {
+        text-align: center;
+        left: 50%;
+        width: 50%;
         z-index: 100;
         position: absolute;
         color: white;
         font-size: 24px;
         font-weight: bold;
-        left: 30%;
         top: 35%;
       }
       #totalQuestions,#correct,#percentage {
@@ -80,6 +82,15 @@
       }
       #comment {
         font-weight: normal;
+      }
+      .requiz {
+        color: black;
+        font-weight: normal;
+        font-size: 18px;
+        text-align: center;
+        width: 100%;
+        background-color: #d7d7d7!important;
+        border-radius: 5px;
       }
 
     </style>
@@ -105,28 +116,22 @@
     <div id="finalFeedback">
       <img id="feedbackImage" src="assets/images/Control_Tower_copy.jpg"/>
       <div id="feedbackText">
+        <i><div id="comment"></div></i><br /><br />
         <table>
           <tr>
-            <td>
-              Total Questions: <div id="totalQuestions"></div>
-              <br />
-            </td>
-            <td></td>
+            <td>Total Questions: <div id="totalQuestions"><br /></div><br /></td>
           </tr>
           <tr>
-            <td>
-              Correct: <div id="correct"></div>
-              <br />
-            </td>
-            <td>
-              <i><div id="comment"></div></i>
-            </td> 
+            <td>Correct: <div id="correct"></div><br /></td>
           </tr>
           <tr>
-            <td>
-              Percentage: <div id="percentage"></div>
-            </td>
-            <td></td>
+            <td>Percentage: <div id="percentage"></div><br /></td>
+          </tr>
+          <tr>
+            <td><div class="requiz" onclick="home();">home</div></td>
+          </tr>
+          <tr>
+            <td><div class="requiz" onclick="requiz();">requiz</div></td>
           </tr>
         </table>
       </div>
