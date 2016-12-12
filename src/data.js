@@ -1,11 +1,11 @@
 // An array of references to images (questions), with their correct answers
 
 var data = [
-  ["falcon.jpg", "Millenium Falcon"],
-  ["x-wing.png", "X-Wing"],
-  ["AirbusA300.jpg", "Airbus A300"],
-  ["AirbusA320.jpg", "Airbus A320"],
-  ["AirbusA330.jpg", "Airbus A330"],
+  [["falcon.jpg"], "Millenium Falcon"],
+  [["x-wing.png"], "X-Wing"],
+  [["AirbusA300.jpg", "AirbusA300-2.jpg"], "Airbus A300"],
+  [["AirbusA320.jpg"], "Airbus A320"],
+  [["AirbusA330.jpg"], "Airbus A330"]
   ["AirbusA340.jpg", "Airbus A340"],
   ["AirbusA380.jpg", "Airbus A380"],
   ["AntonovAN-124.jpg", "Antonov AN-124"],

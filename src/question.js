@@ -1,6 +1,11 @@
 function loadQuestion() {
   resetForNewQuestion();
-  questionIndex = getNonRepeatingQuestion();
+  questionIndex = nonRepeatingQuestionIndex();
+  var arrayOfPlanesAtQuestionIndex = data[questionIndex][0];
+  // pictureIndex is used to search within an array containing multiple images
+  // for the same plane
+  pictureIndex = getPictureIndex(arrayOfPlanesAtQuestionIndex);
+  setQuestion();
   trueAnswer = data[questionIndex][1];
   var falseAnswerIndex1 = falseAnswerIndex(questionIndex, -1, -1);
   var false1 = data[falseAnswerIndex1][1];
@@ -32,7 +37,7 @@ function outputQuestionNumber() {
   $("#questionNumber").html('Question ' + currentQuestionNumber + ' / ' + totalQuestions);
 }
 
-function getNonRepeatingQuestion() {
+function nonRepeatingQuestionIndex() {
   var newQuestionIndex = randomQuestionIndex();
   while (newQuestionIndex == questionIndex) {
     newQuestionIndex = randomQuestionIndex();
@@ -40,15 +45,24 @@ function getNonRepeatingQuestion() {
   return newQuestionIndex;
 }
 
-function sampleIndex(data) {
-  return Math.floor(Math.random()*data.length);
+function getPictureIndex(arrayOfPlanes) {
+  return sampleIndex(arrayOfPlanes);
+}
+
+function sampleIndex(array) {
+  return Math.floor(Math.random()*array.length);
 }
 
 function randomQuestionIndex() {
   var questionIndex = sampleIndex(data);
-  var question = '<img src="assets/images/' + data[questionIndex][0].toString() + '"/>'
-  $("#question").html(question);
+  // var question = '<img src="assets/images/' + data[questionIndex][0][pictureIndex].toString() + '"/>'
+  // $("#question").html(question);
   return questionIndex;
+}
+
+function setQuestion() {
+  var question = '<img src="assets/images/' + data[questionIndex][0][pictureIndex].toString() + '"/>'
+  $("#question").html(question);
 }
 
 function falseAnswerIndex(questionIndex, falseAnswerIndex1, falseAnswerIndex2) {
