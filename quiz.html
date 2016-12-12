@@ -78,6 +78,9 @@
       #totalQuestions,#correct,#percentage {
         color: rgb(0, 178, 255);
       }
+      #comment {
+        font-weight: normal;
+      }
 
     </style>
 
@@ -102,12 +105,30 @@
     <div id="finalFeedback">
       <img id="feedbackImage" src="assets/images/Control_Tower_copy.jpg"/>
       <div id="feedbackText">
-        Total Questions: <div id="totalQuestions"></div>
-        <br />
-        Correct: <div id="correct"></div>
-        <br />
-        Percentage: <div id="percentage"></div>
-        <br />
+        <table>
+          <tr>
+            <td>
+              Total Questions: <div id="totalQuestions"></div>
+              <br />
+            </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>
+              Correct: <div id="correct"></div>
+              <br />
+            </td>
+            <td>
+              <i><div id="comment"></div></i>
+            </td> 
+          </tr>
+          <tr>
+            <td>
+              Percentage: <div id="percentage"></div>
+            </td>
+            <td></td>
+          </tr>
+        </table>
       </div>
     </div>
 
