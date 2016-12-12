@@ -1,3 +1,4 @@
+var questionIndex = 0
 var trueAnswer = ''
 var currentQuestionNumber = 1;
 var currentQuestionAnswered = false;

@@ -1,6 +1,6 @@
 function loadQuestion() {
   resetForNewQuestion();
-  var questionIndex = randomQuestionIndex();
+  questionIndex = getNonRepeatingQuestion();
   trueAnswer = data[questionIndex][1];
   var falseAnswerIndex1 = falseAnswerIndex(questionIndex, -1, -1);
   var false1 = data[falseAnswerIndex1][1];
@@ -30,6 +30,14 @@ function resetChoiceClassNames() {
 
 function outputQuestionNumber() {
   $("#questionNumber").html('Question ' + currentQuestionNumber + ' / ' + totalQuestions);
+}
+
+function getNonRepeatingQuestion() {
+  var newQuestionIndex = randomQuestionIndex();
+  while (newQuestionIndex == questionIndex) {
+    newQuestionIndex = randomQuestionIndex();
+  }
+  return newQuestionIndex;
 }
 
 function sampleIndex(data) {
