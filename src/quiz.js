@@ -1,6 +1,7 @@
 var trueAnswer = ''
 var currentQuestionNumber = 1;
 var currentQuestionAnswered = false;
+var firstTimeAnsweringQuestion = true;
 var score = 0
 var totalQuestions = 5;
 var percentage = 0
@@ -10,7 +11,7 @@ $(document).ready(function() {
   loadQuestion();
 });
 
-function checkAnswer(){
+function checkAnswer() {
   var choiceElement = event.target
   var choice = choiceElement.innerHTML;
   if (choice == trueAnswer) {
@@ -24,7 +25,6 @@ function checkAnswer(){
         loadQuestion()
       }, 1000);
     } else {
-      // presentFinalScore();
       calculatePercentage();
       finalFeedback();
     }
@@ -32,25 +32,26 @@ function checkAnswer(){
 }
 
 function correctAnswer() {
-  score += 1;
+  if (firstTimeAnsweringQuestion == true) {
+    score += 1;
+  }
   currentQuestionAnswered = true;
   currentQuestionNumber += 1
   $("#feedback").html("Correct!").show().fadeOut(1000);
 }
 
-function incorrectAnswer(element){
+function incorrectAnswer(element) {
+  firstTimeAnsweringQuestion = false;
+  // element.switchClass("choice", "incorrect");
+  $(element).toggleClass("choice incorrect");
   element.style.backgroundColor = "rgb(255, 64, 64)";
 }
 
-function presentFinalScore(){
-  alert('Your total score is: ' + score);
-}
-
-function calculatePercentage(){
+function calculatePercentage() {
   percentage = Math.floor((score / totalQuestions) * 100)
 }
 
-function finalComment(){
+function finalComment( ) {
   var comment = ''
   if (percentage == 100) {
     comment = "Coming along nicely. Dad would be proud."
@@ -62,7 +63,7 @@ function finalComment(){
   return "\"" + comment + "\""
 }
 
-function finalFeedback(){
+function finalFeedback() {
   document.getElementById("finalFeedback").style.visibility="visible";
   document.getElementById("totalQuestions").innerHTML=totalQuestions;
   document.getElementById("correct").innerHTML=score;

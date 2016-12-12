@@ -1,7 +1,5 @@
 function loadQuestion() {
-  currentQuestionAnswered = false;
-  resetChoicesColours();
-  outputQuestionNumber();
+  resetForNewQuestion();
   var questionIndex = randomQuestionIndex();
   trueAnswer = data[questionIndex][1];
   var falseAnswerIndex1 = falseAnswerIndex(questionIndex, -1, -1);
@@ -13,8 +11,24 @@ function loadQuestion() {
   randomizeMultipleChoice(trueAnswer, false1, false2, false3);
 }
 
-function resetChoicesColours() {
-  choices = document.getElementsByClassName("choice");
+function resetForNewQuestion() {
+  firstTimeAnsweringQuestion = true
+  currentQuestionAnswered = false;
+  resetChoiceClassNames();
+  resetChoiceColours();
+  outputQuestionNumber();
+}
+
+function resetChoiceClassNames() {
+  var incorrectChoices = document.getElementsByClassName("incorrect");
+  for (i = 0; i < incorrectChoices.length; i++) {
+    console.log(incorrectChoices[i]);
+    $(incorrectChoices[i]).toggleClass("incorrect choice");
+  }
+}
+
+function resetChoiceColours() {
+  var choices = document.getElementsByClassName("choice");
   for (i = 0; i < choices.length; i++) {
     choices[i].style.backgroundColor = "#d7d7d7";
   }
