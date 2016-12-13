@@ -16,6 +16,6 @@ open index.html
 
 <img width="1280" alt="quizeo 2" src="https://cloud.githubusercontent.com/assets/18581870/21145796/754b2376-c147-11e6-9062-9d72a90b6f4e.png">
 
-<img width="1280" alt="quizeo 3" src="https://cloud.githubusercontent.com/assets/18581870/21145807/8054ba70-c147-11e6-96ed-e200781ddab3.png">
+<img width="1278" alt="quizeo 3" src="https://cloud.githubusercontent.com/assets/18581870/21146061/51f6a200-c148-11e6-847b-8e0a9439ff9a.png">
 
 <img width="1274" alt="quizeo 4" src="https://cloud.githubusercontent.com/assets/18581870/21145931/e40935a0-c147-11e6-9a82-d93474f39690.png">
