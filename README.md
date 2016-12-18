@@ -5,10 +5,10 @@ My sister has recently started to train as an Air Traffic Controller. As part of
 ### Instructions For Use
 Clone the repo and open index.html for Quizeo's landing page:
 ```
-git clone git@github.com:jonnymoore12/quizeo.git
+$ git clone git@github.com:jonnymoore12/quizeo.git
 ```
 ```
-open index.html
+$ open index.html
 ```
 
 ### Screenshots
