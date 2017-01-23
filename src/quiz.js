@@ -8,6 +8,8 @@ var score = 0
 var totalQuestions = 5;
 var percentage = 0
 
+// var obj = {index:0,pictureindex:};
+
 $(document).ready(function() {
   getTotalQuestions();
   loadQuestion();
